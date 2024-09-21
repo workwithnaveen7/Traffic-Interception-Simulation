@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Interception Simulation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Welcome to the Traffic Interception Simulation!</h1>
+    <p>This page allows you to see how VPNs and HTTPS can be used to prevent an attacker with the ability to intercept your traffic from being able to steal or modify your information in transit. This scenario is most common when connected to public (or otherwise untrusted) wireless access points, such as those found in restaurants or public transport.</p>
+
+    <div class="control-panel">
+        <label>
+            <input type="checkbox" id="useVPN"> Use VPN
+        </label>
+        <label>
+            <input type="checkbox" id="useHTTPS"> Use HTTPS
+        </label>
+        <button onclick="sendRequest()">Send Request</button>
+    </div>
+
+    <div class="simulation">
+        <div id="result"></div>
+        <div class="visuals">
+            <div class="source" id="source">Source</div>
+            <div class="data-packet" id="dataPacket">Data</div>
+            <div class="attacker" id="attacker">Hacker</div>
+            <div class="server" id="server">Server</div>
+        </div>
+    </div>
+
+    <div id="logs" class="logs">
+        <h2>Interception Log</h2>
+        <ul id="logList"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+

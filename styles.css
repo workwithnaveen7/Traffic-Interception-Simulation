@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    text-align: center;
+}
+
+.control-panel {
+    margin: 20px;
+}
+
+.control-panel button {
+    padding: 10px 30px; 
+    font-size: 1.2em;    
+    background-color: #0fc6f9; 
+    color: white;        
+    border: none;        
+    border-radius: 5px;  
+    cursor: pointer;      
+    transition: background-color 0.3s; 
+}
+
+.control-panel button:hover {
+    background-color: #0056b3; 
+}
+
+.simulation {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+#result {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.visuals {
+    position: relative;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+.source, .server {
+    width: 80px;
+    height: 80px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    position: relative;
+}
+
+.data-packet {
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    position: absolute;
+    border-radius: 50%;
+    animation: movePacket 4s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+}
+
+.attacker {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    animation: moveAttacker 4s linear infinite;
+}
+
+@keyframes movePacket {
+    0%, 100% { left: 10%; }
+    50% { left: 90%; }
+}
+
+@keyframes moveAttacker {
+    0%, 100% { left: 45%; }
+    50% { left: 55%; }
+}
+
+.safe {
+    background-color: green !important;
+}
+
+.intercepted {
+    background-color: orange !important;
+}
+
+/* Logs styling */
+.logs {
+    margin-top: 30px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+.logs h2 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+#logList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#logList li {
+    background-color: #ffc;
+    margin: 5px 0;
+    padding: 10px;
+    border-left: 5px solid red;
+}
+
+
